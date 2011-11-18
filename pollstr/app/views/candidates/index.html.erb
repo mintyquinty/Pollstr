@@ -12,12 +12,14 @@
     <th></th>
     <th></th>
     <th></th>
+    <th></th>
   </tr>
 
 <% @candidates.each do |candidate| %>
   <tr>
-    <td class="t_name"><%= candidate.name %></td>
-    <td class="t_party"><%= candidate.party_id %></td>
+    <td><%= candidate.name %></td>
+    <td><%= candidate.party_id %></td>
+    <td><%= link_to 'Vote', new_vote_path %></td>
     <td><%= link_to 'Show', candidate %></td>
     <td><%= link_to 'Edit', edit_candidate_path(candidate) %></td>
     <td><%= link_to 'Destroy', candidate, confirm: 'Are you sure?', method: :delete %></td>

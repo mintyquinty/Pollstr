@@ -3,12 +3,19 @@ def new_vote_path(id)
 	return "/vote/#{id}"
 end
 %>
+
+<style type="text/css">
+  th {padding: 2px; font-size: 10px; font-weight:bold; color:#fff;background:#000;}  
+  td {padding: 10px; font-size: 14px; font-weight:bold; color:#000;}
+</style>
+
 <h1>Listing candidates</h1>
 
-<table>
+<table class="heading">
   <tr>
-    <th>Name</th>
-    <th>Party</th>
+    <th class="t_name">Name</th>
+    <th class="t_party">Party</th>
+    <th></th>
     <th></th>
     <th></th>
     <th></th>
@@ -18,6 +25,7 @@ end
   <tr>
     <td><%= candidate.name %></td>
     <td><%= candidate.party_id %></td>
+    <td><%= link_to 'Vote', new_vote_path %></td>
     <td><%= link_to 'Show', candidate %></td>
     <td><%= link_to 'Edit', edit_candidate_path(candidate) %></td>
     <td><%= link_to 'Destroy', candidate, confirm: 'Are you sure?', method: :delete %></td>

@@ -1,4 +1,6 @@
 Pollstr::Application.routes.draw do
+  resources :candidates
+
   resources :parties
 
   # The priority is based upon order of creation:

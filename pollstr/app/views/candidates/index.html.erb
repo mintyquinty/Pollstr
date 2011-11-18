@@ -29,7 +29,7 @@ end
         <%= link_to 'Destroy', candidate, confirm: 'Are you sure?', method: :delete %>
       </div>
     </td>
-    <td><%= candidate.party_id %></td>
+    <td><%= candidate.party.name %></td>
 		<td><%= link_to 'Vote for me!', new_vote_path(candidate.id) %></td>
   </tr>
 <% end %>

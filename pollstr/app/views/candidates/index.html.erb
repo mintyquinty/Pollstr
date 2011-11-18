@@ -1,3 +1,8 @@
+<%
+def new_vote_path(id)
+	return "/vote/#{id}"
+end
+%>
 <h1>Listing candidates</h1>
 
 <table>
@@ -16,6 +21,7 @@
     <td><%= link_to 'Show', candidate %></td>
     <td><%= link_to 'Edit', edit_candidate_path(candidate) %></td>
     <td><%= link_to 'Destroy', candidate, confirm: 'Are you sure?', method: :delete %></td>
+		<td><%= link_to 'Vote for me!', new_vote_path(candidate.id) %></td>
   </tr>
 <% end %>
 </table>

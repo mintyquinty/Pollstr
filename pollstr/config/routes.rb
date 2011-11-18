@@ -2,6 +2,8 @@ Pollstr::Application.routes.draw do
   resources :candidates
 
   resources :parties
+  
+  match '/vote/:id' => 'candidates#vote'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -11,8 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111118221042) do
-
+ActiveRecord::Schema.define(:version => 20111118221753) do
   create_table "candidates", :force => true do |t|
     t.string   "name"
     t.integer  "party_id"
@@ -23,6 +22,11 @@ ActiveRecord::Schema.define(:version => 20111118221042) do
   create_table "parties", :force => true do |t|
     t.string   "name"
     t.string   "abbreviation"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "votes", :force => true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
   end

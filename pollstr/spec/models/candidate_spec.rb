@@ -11,5 +11,10 @@ describe Candidate do
     c.party_id.should == 1
   end
   
-  # it ''
+  it 'should have a party id that corresponds to a party' do
+    p = Party.new(:name => "Test Party")
+    p.save
+    c = Candidate.new(:name => "Test Candidate", :party_id => p.id)
+    c.party_id.should == p.id
+  end
 end

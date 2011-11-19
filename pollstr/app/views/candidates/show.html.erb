@@ -10,9 +10,17 @@
   <%= @candidate.party_id %>
 </p>
 
+<%
+	votes = Vote.where(:candidate_id => @candidate.id).count
+	totalvotes = Vote.count
+%>
 <p>How many votes ya got?
-	<%= Vote.where(:candidate_id => @candidate.id).count %>
-	</p>
+	<%= votes %>
+</p>
+
+<p>So what percentage of the total is that?
+	<%= (votes.to_f / totalvotes * 100).floor %>% (out of <%= totalvotes %> votes to date)
+</p>
 
 
 <%= link_to 'Edit', edit_candidate_path(@candidate) %> |
